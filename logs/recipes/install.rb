@@ -1,14 +1,8 @@
-template "/tmp/cwlogs.cfg" do
-  source "cwlogs.cfg.erb"
-  owner "root"
-  group "root"
-  mode 0644
-end
 directory "/opt/aws/cloudwatch" do
  recursive true
 end
 
-remote_file "/opt/aws/cloudwatch/awslogs-agent-setup-v1.0.py" do
+remote_file "/opt/aws/cloudwatch/awslogs-agent-setup.py" do
 source "https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py"
 mode "0755"
 end
