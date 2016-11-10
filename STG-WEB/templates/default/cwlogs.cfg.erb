@@ -27,25 +27,29 @@ state_file = /var/awslogs/state/agent-state
 #
 #
 
-[<%= node[:opsworks][:stack][:name] %>-http-error]
+#[<%= node[:opsworks][:stack][:name] %>-http-error]
+[Http-Errors]
 datetime_format = [%Y-%m-%d %H:%M:%S]
 log_group_name = Staging-Web
 file = <%= node[:apache][:log_dir] %>/shop.samsung.com-error_log
 log_stream_name = <%= node[:opsworks][:instance][:hostname] %>-shop.samsung.com-error_log
 
-[<%= node[:opsworks][:stack][:name] %>-https-error]
+#[<%= node[:opsworks][:stack][:name] %>-https-error]
+[Https-Erros]
 datetime_format = [%Y-%m-%d %H:%M:%S]
 log_group_name = Staging-Web
 file = <%= node[:apache][:log_dir] %>/ssl_error_log
 log_stream_name = <%= node[:opsworks][:instance][:hostname] %>-ssl_error_log
 
-[<%= node[:opsworks][:stack][:name] %>-https-access]
+#[<%= node[:opsworks][:stack][:name] %>-https-access]
+[Https-Access]
 datetime_format = [%Y-%m-%d %H:%M:%S]
 log_group_name = Staging-Web
 file = <%= node[:apache][:log_dir] %>/client_request_log
 log_stream_name = <%= node[:opsworks][:instance][:hostname] %>-client_request_log
 
-[<%= node[:opsworks][:stack][:name] %>-messages]
+#[<%= node[:opsworks][:stack][:name] %>-messages]
+[Messages]
 datetime_format = [%Y-%m-%d %H:%M:%S]
 log_group_name = Staging-Web
 file = /var/log/messages
