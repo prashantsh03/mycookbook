@@ -1,4 +1,4 @@
-template "/tmp/cwlogs.cfg" do
+template "/template/default/cwlogs.cfg" do
   cookbook "logs"
   source "cwlogs.cfg.erb"
   owner "root"
